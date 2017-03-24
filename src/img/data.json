@@ -1,0 +1,114 @@
+//1.获取用户是否绑定手机号  参数用户openid
+//返回值
+var data = {
+        "msg": "成功!",
+        "code": 0, //0成功,其他失败
+        "data": {
+            "isBound": 0, //0绑定  其他未绑定 未绑定
+            "user": {
+                "id": "", //,
+                "openId ": "", //用户openid,这个是微信公众号返回的
+                "mobilePhone": "", //用户点话
+                "headImgUrl": "", //用户头像
+                "nickName": "", //用户名字
+                "sex": "", //用户性别
+                "memberNum": "",
+            }
+        }
+    }
+//2.储存用户  参数用户信息
+    //返回值
+var data = {
+    "msg": "成功!",
+    "code": 0, //0成功,其他失败
+}
+
+//3.扫描/输入条形码添加购物车  参数,条码
+//返回值
+var data = {
+        "msg": "成功!",
+        "code": 0, //0成功,其他失败
+        "data": {
+            "goods": {
+                "name": "", //商品名称
+                "id ": "", //商品id
+                "price": "", //商品价格  
+                "image": "", //商品图片
+                "category": "", //分类名称
+            }
+        }
+    }
+ //4.提交支付,生成预付款订单号
+    //参数  id1:count1 id2:count2...totlePrice 商品id和数量 商品总价
+    //返回值
+var data = {
+        "msg": "成功!",
+        "code": 0, //0成功,其他失败
+        "data": {
+            "orderNum": "" //预付款订单号
+        }
+    }
+//5.获取所有订单列表
+    //参数 用户id
+    //返回值
+var data = {
+    "msg": "成功!",
+    "code": 0, //0成功,其他失败
+    "data": {
+        "orderList": [{
+            "id": "", //订单id
+            "orderCode": "", //订单号
+            "money": "", //金额
+            "orderTime": "", //下单时间
+            "payTime": "", //支付时间
+            "confirmTime": "", //确认时间
+            "status": "", //支付状态
+            "orderNum": "", //预付款订单号
+            "operator": "", //操作人
+            "goodsList": [{ //商品列表
+                "goods": {
+                    "name": "", //商品名称
+                    "id ": "", //商品id
+                    "price": "", //商品价格  
+                    "image": "", //商品图片
+                    "category": "", //分类名称
+                }
+            }, {
+                "goods": {
+                    "name": "", //商品名称
+                    "id ": "", //商品id
+                    "price": "", //商品价格  
+                    "image": "", //商品图片
+                    "category": "", //分类名称
+                }
+            }]
+        }, {
+            "id": "", //订单id
+            "orderCode": "", //订单号
+            "money": "", //金额
+            "orderTime": "", //下单时间
+            "payTime": "", //支付时间
+            "confirmTime": "", //确认时间
+            "status": "", //支付状态
+            "orderNum": "", //预付款订单号
+            "operator": "", //操作人
+             "goodsList": [{ //商品列表
+                "goods": {
+                    "name": "", //商品名称
+                    "id ": "", //商品id
+                    "price": "", //商品价格  
+                    "image": "", //商品图片
+                    "category": "", //分类名称
+                }
+            }, {
+                "goods": {
+                    "name": "", //商品名称
+                    "id ": "", //商品id
+                    "price": "", //商品价格  
+                    "image": "", //商品图片
+                    "category": "", //分类名称
+                }
+            }]
+        }]
+    }
+}
