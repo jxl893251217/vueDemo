@@ -2,9 +2,9 @@
 <div class="header-b" id='head_top'>
     <div class="header-b-c">
         <div class="header-b-l">
-            <a href="https://d.weidian.com/index.php">
-                <img src="https://d.weidian.com/images/index/logo.png">
-            </a>
+            <router-link to="/">
+                <img :src="shopInfo.shopIcon" class="logo">
+            </router-link>
         </div>
         <div class="header-b-r">
             <div class="wealth-tips"> 
@@ -15,12 +15,12 @@
                   width="200"
                   trigger="click"
                  >
-                  <p>订单消息：<span>0</span></p>
+                  <p><router-link to="/shop/msg">订单消息：<span>0</span></router-link></p>
                   <p>聊天消息：<span>0</span></p>
                   <p>个人资料：<span>0</span></p>
                   <p>处罚申诉：<span>0</span></p>
                 </el-popover>
-                <span v-popover:popover class="hd_u_name" style="display:inline;">思埠新微商<i class="tips-list-icon"></i></span>
+                <span v-popover:popover class="hd_u_name" style="display:inline;">{{shopInfo.name}}<i class="tips-list-icon"></i></span>
 
             </div> <a @click="dialogVisible = true" class="quit" > 退出 </a> 
         </div>
@@ -50,6 +50,7 @@
         mounted(){
       
         },
+        props:["shopInfo"],
         methods: {
             quit(){
                 this.dialogVisible=false;
@@ -59,8 +60,12 @@
     }
 </script>
 
-<style type="text/css">
+<style type="text/css" scoped>
+.logo{
+    height: 100%;
+}
 .header-b{
+    min-width: 1200px;
     width: 100%;
     height: 79px;
     font-size: 14px;
@@ -103,14 +108,14 @@
 }
 
 .header-b .header-b-r .wealth-tips span.hd_u_name{
-    display: none;
     color: #fff;
+    padding-right: 10px;
 }
 
 .header-b .header-b-r .wealth-tips .tips-list-icon{
     width: 12px;
     height: 8px;
-    background: url(https://d.weidian.com/images/index/jt.png);
+    background: url(../../assets/img/icons/jt.png);
     position: absolute;
     right: 10px;
     top: 9px;
@@ -159,6 +164,9 @@
     padding-left: 8px;
     color: #f8524a;
     cursor: pointer;
+}
+.el-popover p{
+    line-height:2;
 }
 
 
